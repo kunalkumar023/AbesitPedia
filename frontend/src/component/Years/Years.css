@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://cdn.dribbble.com/users/4598241/screenshots/10759555/media/a3d3f6077e9ada965cafddbb49e32fc5.jpg?resize=768x576&vertical=center");
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    backdrop-filter: blur(8px); 
+}
+
+.yearDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 60px 30px;
+    width: 220px;
+    height: 320px;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(185, 162, 233, 0.9);
+    background-blend-mode: overlay; 
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.yearDiv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.yearDiv:hover {
+    transform: translateY(-15px) scale(1.05);
+    background-color: rgba(31, 76, 105, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);}
+
+.yearDivHover {
+    color: #47c7eb;
+}
+
+.yearDiv span {
+    z-index: 1; 
+    font-weight: bold;
+    font-size: 26px; 
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .yearDiv {
+        width: 180px;
+        height: 280px;
+        padding: 30px;
+        font-size: 18px;
+    }
+}
